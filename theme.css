@@ -1,0 +1,572 @@
+/********************
+   GLOBAL
+*********************/
+body,
+textarea,
+input,
+keygen,
+select,
+button {
+    font-family: 'segoe ui semilight', 'segoe ui', myriad, sans-serif;
+    line-height: 1.6;
+}
+::selection {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+::-moz-selection {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/********************
+   HEADER
+*********************/
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    height: 50px;
+    margin-bottom: 20px;
+    background: #0072C6;
+    font-family: 'segoe ui semilight', 'segoe ui', 'myriad', sans-serif;
+    color: rgba(255, 255, 255, .8);
+    text-transform: lowercase!important;
+    font-weight: 300!important;
+    box-shadow: 0 0 20px 0px white;
+}
+#header > * {
+    box-sizing: border-box;
+}
+.res-nightmode #header {
+    box-shadow: 0 0 20px 0px black;
+    border-bottom: 0;
+}
+#header-bottom-left>*,
+#header-bottom-right>* {
+    text-transform: lowercase!important;
+    font-weight: 400!important;
+    font-variant: initial!important;
+}
+#header a {
+    color: rgba(255, 255, 255, .8);
+}
+#header a:hover {
+    color: white;
+}
+#header-img-a::before,
+#header .tabmenu::before,
+#header .pagename,
+#header-bottom-right,
+#header .dropdown.srdrop::before,
+#srDropdownContainer a {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    min-width: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    padding: 14px 14px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+}
+#srDropdownContainer a {
+    width: 50px;
+    overflow: hidden;
+}
+#srLeftContainer,
+#RESShortcutsViewport,
+#RESShortcutsEditContainer,
+#sr-header-area {
+    height: 50px;
+    max-height: 50px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#header-img-a::before:hover,
+#header .srdrop::before:hover,
+#header .pagename:hover,
+#header .tabmenu::before:hover {
+    background: rgba(255, 255, 255, .1);
+    color: white;
+}
+img#header-img {
+    display: none!important;
+}
+
+/* 
+layout 
+*/
+
+#sr-header-area {
+    background: none;
+    border: none;
+}
+.res-nightmode #sr-header-area {
+    background: #333
+}
+#header #sr-header-area .width-clip {
+    position: inline;
+}
+#header #sr-more-link,
+.dropdown.srdrop .selected {
+    display: none;
+}
+#header .sr-list {
+    overflow: hidden;
+    position: absolute;
+    left: 165px;
+    background: transparent;
+    opacity: .5;
+    transition: opacity 0.14s ease-in-out;
+    z-index: 1;
+}
+#header .sr-list:hover {
+    opacity: 1;
+}
+#header .dropdown.srdrop::before,
+#header #srDropdownContainer a {    
+    left: 0px;
+    content: "`";
+    color: rgba(255, 255, 255, 0) !important;
+    background: transparent url(%%squares%%) top left no-repeat;
+}
+#header .dropdown.srdrop::before:hover,
+#header #srDropdownContainer a::before {
+    background-color: rgba(255, 255, 255, .1);
+}
+#header .pagename::before {
+    content: "↪  ";
+    left: 50px;
+}
+#header-img-a::before {
+    left: 50px;
+    content: "`";
+    color: rgba(255, 255, 255, 0);
+    background: transparent url(%%snoo%%) top left no-repeat;
+}
+#header ul.tabmenu {
+    top: 0px;
+    left: 100px;
+    display: block;
+    position: absolute;
+    margin: 0;
+}
+#header .tabmenu:before {
+    content: "?";
+    color: rgba(255, 255, 255, 0);
+    background: transparent url(%%rank%%) top left no-repeat;
+}
+#header .pagename {
+    left: 150px;
+}
+#header-img-a img,
+#header #tabmenu li,
+#header .srdrop .selected {
+    display: none;
+}
+#header-bottom-right {
+    background: #0052A6;
+    border-radius: 0;
+    font-size: 14px!important;
+    padding: 17px 14px!important;
+    top: 0!important;
+    bottom: 0!important;
+    height: 50px;
+    z-index: 2;
+}
+.res-nightmode #header-bottom-right {
+    background: #222;
+}
+#header-bottom-right .user,
+#header-bottom-right .separator {
+    color: rgba(255, 255, 255, .3);
+}
+/* interactive components */
+#sr-header-area .drop-choices.srdrop,
+#header #srList {
+    background-color: #fff !important;
+    border: 1px solid #b6b6b6 !important;
+    -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, .4);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, .4);
+    text-transform: lowercase!important;
+    font-weight: 300!important;
+    font-variant: initial!important;
+    font-size: 14px!important;
+    margin: 10px;
+    position: fixed !important;
+    top: 50px !important;
+    bottom: 0;
+    overflow: scroll;
+}
+#header #srList {
+    max-height: 500px !important;
+}
+#header .srSep {
+    display: none;
+}
+#sr-header-area .drop-choices.srdrop a,
+#header #srList a {
+    color: #0072C6;
+}
+#sr-header-area .drop-choices.srdrop a:hover,
+#header #srList a:hover {
+    color: #0072C6;
+    background: transparent;
+}
+#header .srdrop .choice.bottom-option {
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+    padding-top: 3px;
+}
+#header .tabmenu li {
+    border: 0;
+    background: #0072C6;
+    font-family: "segoe ui", "myriad", sans-serif;
+    color: rgba(255, 255, 255, .8);
+    text-transform: lowercase!important;
+    font-weight: 300!important;
+    font-variant: initial!important;
+    font-size: 14px!important;
+}
+#header #sr-header-area .drop-choices.srdrop {
+    top: 50px!important;
+    padding: 15px;
+}
+#header .tabmenu li {
+    border-left: 14px solid #0072C6;
+    border-right: 14px solid #0072C6;
+    padding: 1px;
+}
+#header .tabmenu li:first-child {
+    padding-top: 14px;
+}
+#header .tabmenu li:last-child {
+    border-bottom: 14px solid #0072C6;
+}
+.tabmenu li.selected {
+    font-weight: bold!important;
+}
+#sr-header-area .drop-choices.srdrop.inuse,
+#header .tabmenu:hover {
+    opacity: .9;
+    transform: translateY(0px);
+}
+#header .tabmenu li {
+    display: none!important
+}
+#header .tabmenu li:first-child {
+    margin-top: 50px
+}
+#header .tabmenu:hover li {
+    display: block !important;
+    margin-left:1px;
+}
+#header .tabmenu li a {
+    width: 200px;
+    display: block;
+    border: 0 !important;
+    background: #0072C6;
+    color: rgba(255, 255, 255, .8);
+}
+#header .tabmenu li.selected a,
+#header .tabmenu li a:hover {
+    color: white;
+    background: none;
+    border: none
+}
+/*
+headr - res
+*/
+
+#userbarToggle {
+    opacity: 0;
+}
+#RESMainGearOverlay {
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+}
+#RESMainGearOverlay .gearIcon {
+    display: none!important;
+}
+.RESDropdownList,
+#RESAccountSwitcherDropdown {
+    background: #235FC0;
+    opacity: .9;
+    border: 0;
+}
+.RESDropdownList li,
+#RESAccountSwitcherDropdown {
+    font-size: 14px;
+    font-weight: 400;
+}
+#RESAccountSwitcherDropdown {
+    top: 50px!important;
+}
+.RESDropdownList li:hover,
+.RESDropdownList li a:hover {
+    color: white;
+    background: none;
+}
+#RESStaticShortcuts,
+#RESShortcuts {
+    z-index: 1!important;
+    opacity: 0.5;
+    transition: opacity 0.14s linear;
+    margin-left: 8px;
+}
+#RESStaticShortcuts:hover,
+#RESShortcuts:hover {
+    opacity: 1;
+}
+#RESStaticShortcuts {
+    margin-left: 157px;
+}
+body #sr-header-area a.RESShortcutsCurrentSub,
+body #RESSubredditGroupDropdown .RESShortcutsCurrentSub a {
+    color: white!important;
+}
+#RESShortcutsEditContainer {
+    display: none;
+}
+
+/********************
+   SIDEBAR
+*********************/
+
+.morelink,
+.disabled .morelink,
+.disabled .morelink:hover {
+    border-radius: 0;
+    border: 0;
+    font-weight: 300;
+    text-align: left;
+    background: #0072C6;
+    padding: 5px 15px;
+}
+.morelink:hover {
+    background: #235FC0;
+}
+.morelink a,
+.morelink a:hover {
+    color: white !important;
+}
+.nub {
+    display: none;
+}
+.login-form-side {
+    border: 0;
+    background-color: #fafafa;
+}
+.side > .spacer:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/********************
+   FOOTER + Sidebr
+*********************/
+
+.footer-parent {
+    background: #fafafa;
+    padding-top: 10px;
+}
+.res-nightmode .footer-parent {
+    background: #333;
+}
+.footer.rounded {
+    border: 0;
+    margin: 0 auto;
+}
+.infobar {
+    border: 0
+}
+.sidecontentbox .content {
+    background: #f7f7f7;
+    border: 0;
+}
+.icon-menu a {
+    background-color: transparent;
+}
+.titlebox .bottom {
+    border-top: #eee;
+}
+.login-form-side input[type=text],
+.login-form-side input[type=password],
+#search input[type=text] {
+    background: #eee;
+    border: 1px solid #eee;
+}
+.login-form-side input[type=text]:focus,
+.login-form-side input[type=password]:focus,
+#search input[type=text]:focus {
+    outline: 0;
+    background: #fafafa;
+}
+.titlebox h1,
+#search input[type=text],
+input {
+    font-family: 'segoe ui semilight', 'segoe ui', 'myriad pro', sans-serif !important;
+    font-weight: 350;
+}
+.linkinfo {
+    font-family: 'segoe ui semilight', 'segoe ui', 'myriad pro', sans-serif !important;
+    border: 0;
+    border-radius: 0;
+    font-weight: 300;
+}
+.linkinfo .score .number,
+.linkinfo .score .word {
+    font-weight: 350;
+}
+.shortlink {
+    opacity: .4;
+}
+
+/********************
+   CONTENT
+*********************/
+
+.link .usertext-body .md {
+    border: 0;
+    border-radius: 0;
+}
+.content {
+    margin-top: 75px;
+}
+.thing {
+    margin-bottom: 25px;
+}
+.thing .title {
+    color: #0072C6;
+    font-weight: 350;
+    margin-bottom: 1px;
+    font-size: 18px;
+    line-height: 1.3;
+}
+.thing .title:visited,
+.thing.visited .title {
+    color: #5A749F;
+}
+body .thing .tagline .author.submitter {
+    background: #0072C6 !important;
+    color: white !important;
+}
+body .thing .tagline .author.moderator,
+body .thing .tagline .author.admin,
+body .thing .tagline .author.submitter,
+.explore-item .explore-feedback .fancy-toggle-button .add,
+.explore-item .explore-feedback .fancy-toggle-button .remove,
+.RESshortcutside,
+.RESDashboardToggle,
+.fancy-toggle-button .active {
+    font-weight: 400;
+    padding: 1px 5px;
+    border-radius: 0;
+    border: 0;
+}
+.thing.stickied a.title,
+.thing.stickied a.title:visited,
+.thing.stickied a.title.visited {
+    font-weight: 400!important;
+}
+.tagline {
+    font-size: 13px;
+    font-weight: 350;
+    color: #333;
+}
+.voteWeight {
+    font-size: 12px;
+    letter-spacing: .1em;
+    opacity: .8;
+}
+.thumbnail {
+    margin-right: 15px;
+    margin-top: 8px;
+}
+.entry .buttons li a {
+    font-weight: normal;
+    font-family: 'segoe ui semibold', 'segoe ui', myriad, sans-serif;
+    text-transform: uppercase;
+    color: #aaa;
+    font-size: 9px;
+}
+.entry .author {
+    font-weight: 400;
+}
+.redditSingleClick {
+    font-weight: normal!important;
+}
+.expando-button {
+    opacity: .5;
+    margin: 10px;
+}
+body >.content .link .midcol,
+.midcol-spacer {
+    width: 10ex !important;
+}
+body >.content .link .rank,
+.rank-spacer {
+    display: none;
+}
+.link .score {
+    font-size: 20px;
+    font-weight: 400;
+}
+.domain {
+    font-weight: normal;
+}
+code {
+    font-family: 'segoe ui mono', 'source code pro', consolas, 'ubuntu mono', monospace;
+}
+.md h1 {
+    margin-bottom: .5em;
+    font-size: 28px;
+    font-weight: 300;
+    color: #888;
+}
+.md h2 {
+    margin-bottom: .2em;
+    font-size: 23px;
+    font-weight: 300;
+    color: #888;
+}
+.md h3,
+.md h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #999;
+    text-transform: uppercase;
+    margin-top: 2em;
+}
+.md h4 {
+    font-weight: 400;
+    margin-top: 1.5em;
+    color: #aaa;
+}
+blockquote {
+    font-style: italic;
+    font-size: 15px;
+}
+.comment .author {
+    font-weight: 400;
+}
+.menuarea {
+    border-bottom: 1px solid #eee;
+}
+/** UPDATE: Mar 2017 - RES v5 */
+#srLeftContainer {z-index: 0;}
+.tabmenu::before {border-right: 1px solid rgba(255,255,255,.3);}
+#header .redditname {
+   padding-top:0px;
+   margin-top:14px;
+   border-left:none;
+}
+.res-show-link {display:none;}
